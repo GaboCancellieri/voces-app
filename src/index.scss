@@ -1,0 +1,41 @@
+@import './styles/variables/colors.module.scss';
+
+body {
+  background-color: $colorSecondary;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'Source-Sans-Regular';
+  src: local('Source-Sans-Regular'), url(../public/fonts/SourceSansPro/SourceSansPro-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Source-Sans-Black';
+  src: local('Source-Sans-Black'), url(../public/fonts/SourceSansPro/SourceSansPro-Black.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Source-Sans-Bold';
+  src: local('Source-Sans-Bold'), url(../public/fonts/SourceSansPro/SourceSansPro-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Source-Sans-Italic';
+  src: local('Source-Sans-Italic'), url(../public/fonts/SourceSansPro/SourceSansPro-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Fjalla-One-Regular';
+  src: local('Fjalla-One-Regular'), url(../public/fonts/FjallaOne/FjallaOne-Regular.ttf) format('truetype');
+}

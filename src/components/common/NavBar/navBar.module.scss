@@ -1,0 +1,13 @@
+@import '../../../styles/variables/colors.module.scss';
+
+.navBarContainer {
+    border-radius: 0 0 15px 15px;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: $colorPrimary;
+    height: 70px;
+    width: 100%;
+}
