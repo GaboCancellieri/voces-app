@@ -1,8 +1,12 @@
 import React from "react";
-import { HomeBanner } from "../../components/layout";
-
+import { HomeBanner, HomeNews } from "src/components/layout/Home";
 const HomeScreen = () => {
-  return <HomeBanner></HomeBanner>;
+  return (
+    <>
+      <HomeBanner></HomeBanner>
+      <HomeNews></HomeNews>
+    </>
+  );
 };
 
 export default HomeScreen;

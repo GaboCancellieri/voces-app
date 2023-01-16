@@ -1,1 +1,2 @@
-export { default as HomeBanner } from "./HomeBanner";
+export { HomeBanner } from "./Home/index";
+export { HomeNews } from "./Home/index";

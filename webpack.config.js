@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/bundle.js",
-    assetModuleFilename: "public/[name][ext]",
+    assetModuleFilename: "src/assets/[name][ext]",
     clean: true,
   },
   resolve: {
@@ -35,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./public/index.html",
+      template: "./src/assets/index.html",
     }),
     new ForkTSCheckerWebpackPlugin(),
   ],

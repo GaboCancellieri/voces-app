@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
+    "framer-motion": "^8.4.3",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -22,6 +24,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.1.1",
+    "@types/lodash": "^4.14.191",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.5",

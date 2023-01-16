@@ -1,0 +1,39 @@
+@import "../../../styles/variables/colors.module.scss";
+.card {
+  background-color: $colorTransparent;
+  width: fit-content;
+  border-radius: 10px;
+  border: 2px;
+  border-style: solid;
+  border-color: $colorPrimary;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  color: $colorPrimary;
+  margin-top: 5px;
+}
+
+.p {
+  color: $colorWhite;
+}
+
+.img_container {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img {
+  padding: 0.5rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.extended {
+  width: 100%;
+  flex-direction: row;
+}

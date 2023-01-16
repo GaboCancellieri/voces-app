@@ -2,6 +2,7 @@ import React from "react";
 import { HomeScreen } from "./screens";
 import "./App.scss";
 import NavBar from "./components/common/NavBar";
+import Card from "ccomponents/Card/Card";
 
 const App = () => {
   return (

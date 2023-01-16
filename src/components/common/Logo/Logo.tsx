@@ -3,7 +3,7 @@ import { LogoProps } from "./types";
 
 const Logo = ({ height, width, variant = "primary" }: LogoProps) => {
   return (
-    <img src="public/img/logos/Logo.png" alt="" style={{ width, height }} />
+    <img src="src/assets/img/logos/Logo.png" alt="" style={{ width, height }} />
   );
 };
 
