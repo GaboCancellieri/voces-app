@@ -1,10 +1,12 @@
 import React from "react";
-import { HomeBanner, HomeNews } from "src/components/layout/Home";
+import { HomeBanner, HomeNews, HomeLeader } from "src/components/layout/Home";
+import HomeStaff from "src/components/layout/Home/HomeStaff";
 const HomeScreen = () => {
   return (
     <>
       <HomeBanner></HomeBanner>
-      <HomeNews></HomeNews>
+
+      <HomeLeader></HomeLeader>
     </>
   );
 };

@@ -1,13 +1,13 @@
 .homeBannerContainer {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 2rem;
+  // position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .homeBannerContainerMobile {
-    flex-direction: column;
+  flex-direction: column;
 }

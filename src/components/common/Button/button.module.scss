@@ -1,47 +1,46 @@
-@import '../../../styles/variables/colors.module.scss';
+@import "../../../styles/variables/colors.module.scss";
 
 .button {
-    border: 0;
+  border: 0;
 }
 
 .rounded {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .tiny {
-    height: 20px;
-    width: 30px;
+  height: 20px;
+  width: 30px;
 }
 
 .small {
-    height: 36px;
-    width: 86px;
+  height: 36px;
+  width: 86px;
 }
 
 .normal {
-    height: 42px;
-    width: 108px;
+  height: 42px;
+  width: 108px;
 }
 
 .large {
-    height: 51px;
-    width: 116px;
+  height: 51px;
+  width: 116px;
 }
 
 .fit {
-    min-height: 42px;
-    min-width: 108px;
-    height: fit-content;
-    width: fit-content;
+  min-height: 42px;
+  min-width: 108px;
+  height: fit-content;
+  width: fit-content;
 }
 
 .underline {
-    transition: 0.5s;
-    text-decoration: none;
-    text-decoration-color: transparent;
+  transition: 0.5s;
+  text-decoration: none;
+  text-decoration-color: transparent;
 }
 
 .underline:hover {
-    background: $colorAlmostWhite !important;
-    font-weight: bold;
+  background: $colorAlmostWhite !important;
 }

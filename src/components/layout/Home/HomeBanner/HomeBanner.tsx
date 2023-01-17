@@ -54,7 +54,6 @@ const HomeBanner = ({ isDesktop, isMobile }: HomeBannerProps) => {
           )}
         </div>
       </div>
-      <Card />
     </>
   );
 };
