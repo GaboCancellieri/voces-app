@@ -5,7 +5,6 @@ import Typography from "../../../common/Typography";
 import { COLOR_PRIMARY } from "../../../../constants/colors";
 import Card from "ccomponents/Card/Card";
 import { HOME_NEWS_TITLE } from "./constants";
-import Carousel from "framer-motion-carousel";
 
 const HomeNews = () => {
   return (

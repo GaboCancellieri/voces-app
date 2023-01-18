@@ -41,7 +41,7 @@ const Card = ({
         <div className={styles.textContainer}>
           <Typography
             fontFamily="fjallaOne"
-            size={"50px"}
+            size={"35px"}
             color={COLOR_PRIMARY}
             align={cardState.open || isStatic ? "left" : "center"}
           >

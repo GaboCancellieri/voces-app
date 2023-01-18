@@ -10,9 +10,11 @@
   flex-direction: column;
 }
 
-.card.isStatic  {
-  width: 100%;
+.card.isStatic {
+  width: fit-content;
+  display: flex;
   flex-direction: row;
+  margin-top: 20px;
 }
 
 .title {

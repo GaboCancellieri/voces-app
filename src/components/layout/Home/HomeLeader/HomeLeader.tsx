@@ -26,11 +26,6 @@ const HomeLeader = () => {
         description={LEADER_PARAGRAPH}
         imageProps={LEADER_IMAGE_PROPS}
       ></Card>
-      <Card
-        title={LEADER_NAME}
-        description={LEADER_PARAGRAPH}
-        imageProps={LEADER_IMAGE_PROPS}
-      ></Card>
     </div>
   );
 };
