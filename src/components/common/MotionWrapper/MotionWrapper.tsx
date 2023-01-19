@@ -4,7 +4,7 @@ import { MotionWrapperProps } from "./types";
 
 const MotionWrapper = ({
   classname = "",
-  scale = 1.1,
+  scale = 1.05,
   isActive = true,
   children,
   onClick,

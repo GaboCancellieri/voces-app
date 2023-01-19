@@ -1,0 +1,1 @@
+export const ACTIVITIES_TITLE = "ACTIVIDADES";

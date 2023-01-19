@@ -4,3 +4,5 @@ export { HomeLeader } from "./Home/index";
 
 export { ProyectsBanner } from "./Proyects/index";
 export { AreasBanner } from "./Proyects/index";
+export { ActivitiesBanner } from "./Activities/index";
+export { Activities } from "./Activities";
