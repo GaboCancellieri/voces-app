@@ -1,3 +1,3 @@
 export const ROUTES = {
-  HOME_BANNER: "api/homeBanner",
+  HOME_BANNER: "http://localhost:3001/api/homeBanner",
 };

@@ -1,5 +1,13 @@
 import { ImageProps } from "ccomponents/Image/types";
 
+/*
+const AreaSchema = new Schema({
+  title: { type: String, require: true },
+  description: { type: String, require: true },
+  imageURL: { type: String, require: true },
+});
+*/
+
 export const AREAS_BANNER_TITLE = "ÁREAS";
 export const BANNER_FORMATIVAS = "FORMATIVA";
 export const IMAGEN_FORMATIVAS: ImageProps = {

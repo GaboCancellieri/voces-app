@@ -1,16 +1,14 @@
 import React from "react";
 import { HomeScreen } from "./screens";
 import "./App.scss";
-import NavBar from "./components/common/NavBar";
-import Card from "ccomponents/Card/Card";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
-      <HomeScreen />
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+      </Routes>
     </div>
   );
 };
