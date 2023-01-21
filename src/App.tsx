@@ -1,13 +1,15 @@
 import React from "react";
-import { HomeScreen } from "./screens";
+import { ActivitieScreen, HomeScreen, Proyects } from "./screens";
 import "./App.scss";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route path="/proyects" element={<Proyects />} />
+        <Route path="/activities" element={<ActivitieScreen />} />
       </Routes>
     </div>
   );

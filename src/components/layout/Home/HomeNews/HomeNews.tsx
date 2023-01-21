@@ -1,10 +1,9 @@
 import React from "react";
-import Image from "../../../common/Image";
-import styles from "./homeNews.module.scss";
 import Typography from "../../../common/Typography";
 import { COLOR_PRIMARY } from "../../../../constants/colors";
-import Card from "ccomponents/Card/Card";
 import { HOME_NEWS_TITLE } from "./constants";
+import { motion, AnimatePresence } from "framer-motion";
+import Carousel from "ccomponents/Carousel";
 
 const HomeNews = () => {
   return (
@@ -17,6 +16,7 @@ const HomeNews = () => {
       >
         {HOME_NEWS_TITLE}
       </Typography>
+      <Carousel></Carousel>
     </div>
   );
 };
