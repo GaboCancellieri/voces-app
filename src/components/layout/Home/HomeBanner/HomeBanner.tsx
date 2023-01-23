@@ -9,6 +9,7 @@ import { IWindowSizeState } from "src/context/WindowSizeProvider/types";
 import classnames from "classnames";
 import { HomeBannerService } from "src/api/services";
 import { IHomeBannerInfo } from "src/api/types";
+import logoImageAlternative from "src/assets/img/logos/Logo_Alternative.png";
 
 interface HomeBannerProps {
   isDesktop: boolean;
@@ -23,7 +24,6 @@ const HomeBanner = ({ isDesktop, isMobile }: HomeBannerProps) => {
 
   const handleGet = async () => {
     const result = await homeBannerService.get();
-    console.log({ result });
     setHomeBannerInfo(result);
   };
 
@@ -44,7 +44,7 @@ const HomeBanner = ({ isDesktop, isMobile }: HomeBannerProps) => {
           <Image
             height="396px"
             width="402px"
-            url="src/assets/img/logos/Logo_Alternative.png"
+            url={logoImageAlternative}
             altText="HomeBanner"
           />
           <div>

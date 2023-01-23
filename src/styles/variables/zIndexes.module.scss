@@ -1,0 +1,37 @@
+$zIndexes: (
+  'belowAll',
+  'default',
+  'base',
+  'miscellanea',
+  'figure',
+  'tag',
+  'button',
+  'panel',
+  'bar',
+  'dropdown',
+  'aboveDropdown',
+  'filterBar',
+  'videoPopup',
+  'editBottomBar',
+  'editMenu',
+  'mainNav',
+  'newsletterPopup',
+  'spinner',
+  'adminBar',
+  'modalOverlay',
+  'modalContent',
+  'rerankModal',
+  'signForm',
+  'adminPanel',
+  'alert'
+);
+
+// Z function para calcular el valor de Z-Index
+@function z($name) {
+  @if index($zIndexes, $name) {
+    @return index($zIndexes, $name) - 2;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$zIndexes}';
+    @return null;
+  }
+}

@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/bundle.js",
-    assetModuleFilename: "src/assets/[name][ext]",
+    assetModuleFilename: "src/assets/img/[name].[ext]",
     clean: true,
   },
   resolve: {
@@ -28,8 +28,12 @@ module.exports = {
         use: [{ loader: "babel-loader" }],
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },

@@ -32,3 +32,11 @@ export const textColorVariant = {
   danger: COLOR_WHITE,
   blank: COLOR_BLACK,
 };
+
+export const BUTTON_SIZE_VARIANTS = {
+  tiny: "tiny",
+  small: "small",
+  normal: "normal",
+  large: "large",
+  fit: "fit",
+};

@@ -1,65 +1,31 @@
-import * as React from "react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
-import { images } from "./constants";
+import React from "react";
+import { Image } from "../index";
+import MultiCarousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
 
-const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3, // optional, default to 1.
   },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
   },
-};
-
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
 };
 
 export const Carousel = () => {
-  const [[page, direction], setPage] = useState([0, 0]);
-  const imageIndex = wrap(0, images.length, page);
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
-
   return (
-    <>
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.img
-          key={page}
-          src={images[imageIndex]}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        />
-      </AnimatePresence>
-    </>
+    <MultiCarousel responsive={responsive}>
+      <Image width={""} height={""} altText={""} url={""} />
+    </MultiCarousel>
   );
 };
 export default Carousel;

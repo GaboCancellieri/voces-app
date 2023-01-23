@@ -1,0 +1,43 @@
+@import '../../../styles/variables/colors.module.scss';
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputBox {
+  min-height: 25px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 3px $colorTextGrayExtraLight;
+  font-family: 'Source-Sans-Regular';
+  font-size: small;
+  width: 100%;
+}
+
+.inputBox:focus {
+  outline: none;
+  min-height: 25px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 2px 3px $colorPrimary;
+  font-family: 'Source-Sans-Regular';
+  font-size: small;
+}
+
+.onError {
+  box-shadow: 2px 2px 3px $colorDanger;
+}
+
+.onSuccess {
+  box-shadow: 2px 2px 3px $colorSuccess;
+}
+
+.errorMessage {
+  position: relative;
+  align-self: flex-start;
+}

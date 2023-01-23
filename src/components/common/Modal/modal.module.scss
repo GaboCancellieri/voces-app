@@ -1,0 +1,47 @@
+@import "../../../styles/variables/colors.module.scss";
+@import "../../../styles/variables/zIndexes.module.scss";
+
+.modalContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba($color: $colorBlack, $alpha: 0.55);
+  z-index: z('modalOverlay');
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  margin-top: 2rem;
+  padding: 10px;
+  border: 1px solid $colorGrey;
+  border-radius: 20px;
+  background: $colorAlmostWhite;
+  box-shadow: 5px 10px 10px rgb(0 0 0 / 38%);
+  z-index: z('modalContent');
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.isActive {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.isVisible {
+  visibility: visible;
+}

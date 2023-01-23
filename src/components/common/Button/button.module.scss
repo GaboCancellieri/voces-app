@@ -29,8 +29,6 @@
 }
 
 .fit {
-  min-height: 42px;
-  min-width: 108px;
   height: fit-content;
   width: fit-content;
 }
@@ -41,6 +39,6 @@
   text-decoration-color: transparent;
 }
 
-.underline:hover {
+.enableHover:hover {
   background: $colorAlmostWhite !important;
 }

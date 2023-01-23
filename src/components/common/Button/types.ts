@@ -1,11 +1,13 @@
-import { MouseEventHandler } from "react";
-import { buttonVariant } from "./constants";
+import { MouseEventHandler, ReactNode } from "react";
+import { buttonVariant, BUTTON_SIZE_VARIANTS } from "./constants";
 
 export interface ButtonProps {
-  rounded?: boolean;
-  size?: "tiny" | "small" | "normal" | "large" | "fit";
-  variant?: keyof typeof buttonVariant;
-  type?: "button" | "submit";
-  text?: string;
+  align?: "right" | "left" | "center";
+  children: ReactNode;
+  hoverEffect?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  rounded?: boolean;
+  size?: keyof typeof BUTTON_SIZE_VARIANTS;
+  type?: "button" | "submit";
+  variant?: keyof typeof buttonVariant;
 }
