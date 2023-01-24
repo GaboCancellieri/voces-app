@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStateProvider from "./context/GlobalStateProvider/GlobalStateProvider";
 import { BrowserRouter } from "react-router-dom";
+import { Alert } from "ccomponents/index";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,6 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <GlobalStateProvider>
+      <Alert />
       <App />
     </GlobalStateProvider>
   </BrowserRouter>

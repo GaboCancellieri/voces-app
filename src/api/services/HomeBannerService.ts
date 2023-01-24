@@ -24,12 +24,14 @@ class HomeBannerService extends Component<{}, { dispatch: any }> {
   }
 
   async update(id: string, payload: IHomeBannerInfo) {
-    const data = await handleAlert(() =>
-      http.patch(`${rootURL}/${id}`, {
-        payload,
-      })
+    const result = await handleAlert(
+      () =>
+        http.patch(`${rootURL}/${id}`, {
+          payload,
+        }),
+      this.state.dispatch
     );
-    return data;
+    return result;
   }
 }
 

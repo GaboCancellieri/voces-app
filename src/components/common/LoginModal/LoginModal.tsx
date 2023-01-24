@@ -8,18 +8,18 @@ import {
   setLoginPassword,
 } from "./context/actions";
 import { LoginModalProps } from "./types";
-import { LoginService } from "src/api/services";
 import { getUserFromAccessToken } from "src/utils/user";
 import connect from "src/context/Store/connect";
 import { UserDispatchContext } from "src/context/UserContext/UserContext";
 import { loginUser } from "src/context/UserContext/actions";
+import { useLoginService } from "src/api/api";
 
 const LoginModal = ({
   onCancel,
   isActive = false,
   userDispatcher,
 }: LoginModalProps) => {
-  const loginService = new LoginService(null);
+  const loginService = useLoginService();
   const [loginState, loginDispatch] = useReducer(
     loginReducer,
     loginInitialState

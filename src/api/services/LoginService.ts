@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { handleAlert } from "../api";
 import { ROUTES } from "../constants";
 
 import http from "../http-common";
@@ -14,8 +15,11 @@ class LoginService extends Component<{}, { dispatch: any }> {
 
   async login(email: string, password: string) {
     try {
-      const { data } = await http.post(rootURL, { email, password });
-      return data;
+      const result = await handleAlert(
+        () => http.post(rootURL, { email, password }),
+        this.state.dispatch
+      );
+      return result;
     } catch (error) {
       console.error(error);
     }

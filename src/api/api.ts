@@ -1,10 +1,18 @@
+import { useContext } from "react";
+import { showAlert } from "src/context/AlertContext/actions";
+import { AlertDispatchContext } from "src/context/AlertContext/AlertContext";
+import { LoginService } from "./services";
 import HomeBannerService from "./services/HomeBannerService";
 
 export const useHomeBannerService = () => {
-  return new HomeBannerService(null);
+  return new HomeBannerService(useContext(AlertDispatchContext));
 };
 
-export const handleAlert = async (func: Function) => {
+export const useLoginService = () => {
+  return new LoginService(useContext(AlertDispatchContext));
+};
+
+export const handleAlert = async (func: Function, dispatch: any) => {
   try {
     const { status, data } = await func();
     if (status === 200) {
@@ -12,6 +20,13 @@ export const handleAlert = async (func: Function) => {
     }
     return data;
   } catch (error: any) {
-    alert(error.message);
+    console.log({ error });
+    dispatch(
+      showAlert({
+        type: "urgent",
+        variant: "danger",
+        message: error.response?.data?.message ?? error.message,
+      })
+    );
   }
 };

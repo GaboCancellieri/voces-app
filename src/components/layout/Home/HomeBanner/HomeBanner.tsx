@@ -7,9 +7,9 @@ import connect from "src/context/Store/connect";
 import { WindowSizeStateContext } from "src/context/WindowSizeProvider/WindowSizeProvider";
 import { IWindowSizeState } from "src/context/WindowSizeProvider/types";
 import classnames from "classnames";
-import { HomeBannerService } from "src/api/services";
 import { IHomeBannerInfo } from "src/api/types";
 import logoImageAlternative from "src/assets/img/logos/Logo_Alternative.png";
+import { useHomeBannerService } from "src/api/api";
 
 interface HomeBannerProps {
   isDesktop: boolean;
@@ -17,7 +17,7 @@ interface HomeBannerProps {
 }
 
 const HomeBanner = ({ isDesktop, isMobile }: HomeBannerProps) => {
-  const homeBannerService = new HomeBannerService(null);
+  const homeBannerService = useHomeBannerService();
   const [homeBannerInfo, setHomeBannerInfo] = useState<IHomeBannerInfo | null>(
     null
   );
