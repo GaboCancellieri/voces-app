@@ -21,6 +21,8 @@ export const userReducer = (state: IUserState, options: IReducerOptions) => {
         refreshToken: payload.refreshToken,
       };
     case Actions.LOGOUT_USER:
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
       return {
         ...state,
         currentUser: null,

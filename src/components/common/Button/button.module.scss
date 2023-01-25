@@ -1,7 +1,8 @@
-@import "../../../styles/variables/colors.module.scss";
+@import "styles/variables/colors.module.scss";
 
 .button {
   border: 0;
+  cursor: pointer;
 }
 
 .rounded {

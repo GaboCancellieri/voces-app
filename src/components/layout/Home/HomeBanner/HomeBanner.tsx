@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "../../../common/Image";
 import styles from "./homeBanner.module.scss";
-import Typography from "../../../common/Typography";
+import { Typography } from "ccomponents/index";
 import { COLOR_PRIMARY } from "../../../../constants/colors";
 import connect from "src/context/Store/connect";
 import { WindowSizeStateContext } from "src/context/WindowSizeProvider/WindowSizeProvider";
