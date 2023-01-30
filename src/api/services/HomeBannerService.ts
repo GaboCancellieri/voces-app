@@ -27,7 +27,7 @@ class HomeBannerService extends Component<{}, { dispatch: any }> {
     const result = await handleAlert(
       () =>
         http.patch(`${rootURL}/${id}`, {
-          payload,
+          ...payload,
         }),
       this.state.dispatch
     );

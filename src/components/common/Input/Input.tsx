@@ -9,6 +9,7 @@ const Input = ({
   placeholder = "",
   type = "text",
   state = "normal",
+  value,
   onChange = () => {},
 }: InputProps) => {
   return (
@@ -21,6 +22,7 @@ const Input = ({
         type={type}
         placeholder={placeholder}
         onChange={onChange}
+        value={value}
       />
     </div>
   );

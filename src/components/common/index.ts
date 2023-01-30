@@ -1,3 +1,4 @@
+export { default as AdminBar } from "./AdminBar";
 export { default as AdminWrapper } from "./AdminWrapper";
 export { default as Alert } from "./Alert";
 export { default as Button } from "./Button";
@@ -12,4 +13,6 @@ export { default as Logo } from "./Logo";
 export { default as Modal } from "./Modal";
 export { default as MotionWrapper } from "./MotionWrapper";
 export { default as NavBar } from "./NavBar";
+export { default as Table } from "./Table";
+export { default as TextArea } from "./TextArea";
 export { default as Typography } from "./Typography";

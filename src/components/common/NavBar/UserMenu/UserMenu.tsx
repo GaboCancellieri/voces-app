@@ -19,11 +19,12 @@ const UserMenu = ({
   dispatchUser,
   onClose,
 }: UserMenuProps) => {
-  if (!isActive || !currentUser) return <></>;
-
   const navigate = useNavigate();
-  const { isAdmin, name, lastName } = currentUser;
   let menuOptions = USER_MENU_OPTIONS;
+
+  if (!isActive || !currentUser) return <></>;
+  const { isAdmin, name, lastName } = currentUser;
+
   if (!isAdmin) {
     menuOptions = USER_MENU_OPTIONS.filter((option) => !option.isAdmin);
   }

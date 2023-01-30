@@ -8,6 +8,7 @@ module.exports = {
   entry: "./src/index",
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     filename: "js/bundle.js",
     assetModuleFilename: "src/assets/img/[name].[ext]",
     clean: true,
@@ -32,7 +33,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|ico|json)$/i,
         type: "asset/resource",
       },
     ],
@@ -40,6 +41,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./src/assets/index.html",
+      favicon: "./src/assets/favicon.ico",
     }),
     new ForkTSCheckerWebpackPlugin(),
   ],

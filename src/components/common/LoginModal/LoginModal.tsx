@@ -70,11 +70,16 @@ const LoginModal = ({
           <Logo height={"100px"} width={"100px"}></Logo>
         </div>
         <div className={styles.inputContainer}>
-          <Input placeholder="email" onChange={handleEmailChange} />
+          <Input
+            placeholder="email"
+            onChange={handleEmailChange}
+            value={loginState.email}
+          />
           <Input
             type="password"
             placeholder="contraseña"
             onChange={handlePasswordChange}
+            value={loginState.password}
           />
         </div>
         <div className={styles.buttonContainer}>

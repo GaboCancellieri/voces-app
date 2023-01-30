@@ -11,6 +11,7 @@ const Button = ({
   type = "button",
   align = "center",
   hoverEffect = false,
+  disabled = false,
   children,
   onClick,
 }: ButtonProps) => {
@@ -23,6 +24,7 @@ const Button = ({
       type={type}
       style={{ backgroundColor: buttonVariant[variant], justifySelf: align }}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

@@ -7,6 +7,7 @@ import { UserStateContext } from "src/context/UserContext/UserContext";
 import { Icon, LoginModal } from "..";
 import Button from "../Button";
 import Logo from "../Logo";
+import { NAV_BAR_OPTIONS } from "./constants";
 import styles from "./navBar.module.scss";
 import { NavBarProps } from "./types";
 import UserMenu from "./UserMenu";
@@ -26,49 +27,41 @@ const NavBar = ({ currentUser }: NavBarProps) => {
   return (
     <>
       <div className={styles.navBarContainer}>
-        <Link to="/">
-          <Logo height="100%" width="75px" />
-        </Link>
-        <Link to="/">
-          <Button variant="blank" hoverEffect>
-            INICIO
-          </Button>
-        </Link>
-        <Link to="/proyects">
-          <Button variant="blank" hoverEffect>
-            PROYECTO
-          </Button>
-        </Link>
-        <Link to="/activities">
-          <Button size="fit" variant="blank" hoverEffect>
-            ACTIVIDADES
-          </Button>
-        </Link>
-        <Button variant="blank" hoverEffect>
-          STREAMING
-        </Button>
-        <Button variant="blank" hoverEffect>
-          CONTACTO
-        </Button>
-        <Button variant="blank" hoverEffect>
-          PLATAFORMA
-        </Button>
-        {!currentUser ? (
-          <>
-            <Button variant="blank" hoverEffect onClick={toggleLoginModal}>
-              INICIAR SESION
+        <>
+          <Link to="/">
+            <Logo height="100%" width="75px" />
+          </Link>
+          {NAV_BAR_OPTIONS.map((option) => {
+            return (
+              <Link to={option.link}>
+                <Button variant="blank" hoverEffect>
+                  {option.name}
+                </Button>
+              </Link>
+            );
+          })}
+          {!currentUser ? (
+            <>
+              <Button variant="blank" hoverEffect onClick={toggleLoginModal}>
+                INICIAR SESION
+              </Button>
+              <Button variant="blank" hoverEffect>
+                REGISTRARME
+              </Button>
+            </>
+          ) : (
+            <Button variant="blank" onClick={toggleUserMenu}>
+              <Icon
+                iconId={"FcBusinessman"}
+                iconDesign={FLAT_COLOR_ICONS}
+              ></Icon>
             </Button>
-            <Button variant="blank" hoverEffect>
-              REGISTRARME
-            </Button>
-          </>
-        ) : (
-          <Button variant="blank" onClick={toggleUserMenu}>
-            <Icon iconId={"FcBusinessman"} iconDesign={FLAT_COLOR_ICONS}></Icon>
-          </Button>
-        )}
+          )}
+        </>
       </div>
-      {<UserMenu isActive={showUserMenu} onClose={toggleUserMenu} />}
+      {currentUser ? (
+        <UserMenu isActive={showUserMenu} onClose={toggleUserMenu} />
+      ) : null}
       <LoginModal onCancel={toggleLoginModal} isActive={activeLoginModal} />
     </>
   );

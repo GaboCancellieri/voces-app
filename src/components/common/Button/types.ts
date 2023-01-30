@@ -10,4 +10,5 @@ export interface ButtonProps {
   size?: keyof typeof BUTTON_SIZE_VARIANTS;
   type?: "button" | "submit";
   variant?: keyof typeof buttonVariant;
+  disabled?: boolean;
 }

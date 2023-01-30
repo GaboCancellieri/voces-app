@@ -39,4 +39,5 @@ export const BUTTON_SIZE_VARIANTS = {
   normal: "normal",
   large: "large",
   fit: "fit",
+  full: "full",
 };
