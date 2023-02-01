@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import styles from "./card.module.scss";
 import classnames from "classnames";
 import { MotionWrapper, Typography, Image } from "ccomponents/index";
-import { COLOR_PRIMARY } from "constants/colors";
+import { COLOR_PRIMARY, COLOR_WHITE } from "constants/colors";
 import { cardInitialState, cardReducer } from "./context/reducer";
 import { toggleOpen } from "./context/actions";
 import { CardProps } from "./types";
@@ -41,14 +41,20 @@ const Card = ({
         <div className={styles.textContainer}>
           <Typography
             fontFamily="fjallaOne"
-            size={"35px"}
+            size={"30px"}
             color={COLOR_PRIMARY}
             align={cardState.open || isStatic ? "left" : "center"}
           >
             {title}
           </Typography>
           {(cardState.open || isStatic) && (
-            <Typography className={styles.p} align={"justify"}>
+            <Typography
+              className={styles.p}
+              align={"justify"}
+              fontFamily="fjallaOne"
+              size={"20px"}
+              color={COLOR_WHITE}
+            >
               {description}
             </Typography>
           )}

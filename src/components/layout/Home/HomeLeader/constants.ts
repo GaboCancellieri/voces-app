@@ -11,7 +11,7 @@ venenatis enim, ac mattis libero. Integer elit nisi, ornare nec
 lobortis nec, semper. Nullam ut libero quis neque fringilla
 pretium in dapibus mi. Suspendisse potenti. Nunc elementum viverra
 lacus, vel gravida neque venenatis nec.`;
-export const LEADER_NAME = "Tu Vieja";
+export const LEADER_NAME = "MARIANA PRGICH";
 export const LEADER_IMAGE_PROPS: ImageProps = {
   url: "https://media.vogue.es/photos/6352698353125da362b5fa04/2:3/w_2560%2Cc_limit/68516004.jpeg",
   altText: LEADER_NAME,

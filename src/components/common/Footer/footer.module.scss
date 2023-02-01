@@ -1,0 +1,52 @@
+@import "styles/variables/colors.module.scss";
+.footerContainer {
+  border-radius: 15px 15px 0 0;
+  margin-top: 50px;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(36, 36, 36);
+  height: 290px;
+  width: 100%;
+  //justify-content: space-around;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.aboutUs {
+  width: 500px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.contact {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerFoot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+
+  //justify-content: space-around;
+  border-top: 2px solid rgb(99, 94, 94);
+  width: 90%;
+  padding: 10px;
+}

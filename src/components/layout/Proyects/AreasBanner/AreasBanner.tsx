@@ -29,32 +29,34 @@ const AreasBanner = () => {
           {AREAS_BANNER_TITLE}
         </Typography>
       </div>
-      <Card
-        isStatic
-        title={BANNER_FORMATIVAS}
-        imageProps={IMAGEN_FORMATIVAS}
-        description={EXAMPLE_PARAGRAPH}
-      ></Card>
-      <Card
-        isStatic
-        title={BANNER_RECREATIVA}
-        imageProps={IMAGEN_RECREATIVA}
-        description={EXAMPLE_PARAGRAPH}
-      ></Card>
+      <div>
+        <Card
+          isStatic
+          title={BANNER_FORMATIVAS}
+          imageProps={IMAGEN_FORMATIVAS}
+          description={EXAMPLE_PARAGRAPH}
+        ></Card>
+        <Card
+          isStatic
+          title={BANNER_RECREATIVA}
+          imageProps={IMAGEN_RECREATIVA}
+          description={EXAMPLE_PARAGRAPH}
+        ></Card>
 
-      <Card
-        isStatic
-        title={BANNER_DEPROYECTOS}
-        imageProps={IMAGEN_DEPROYECTOS}
-        description={EXAMPLE_PARAGRAPH}
-      ></Card>
+        <Card
+          isStatic
+          title={BANNER_DEPROYECTOS}
+          imageProps={IMAGEN_DEPROYECTOS}
+          description={EXAMPLE_PARAGRAPH}
+        ></Card>
 
-      <Card
-        isStatic
-        title={BANNER_DEPRODUCCION}
-        imageProps={IMAGEN_DEPRODUCCION}
-        description={EXAMPLE_PARAGRAPH}
-      ></Card>
+        <Card
+          isStatic
+          title={BANNER_DEPRODUCCION}
+          imageProps={IMAGEN_DEPRODUCCION}
+          description={EXAMPLE_PARAGRAPH}
+        ></Card>
+      </div>
     </div>
   );
 };

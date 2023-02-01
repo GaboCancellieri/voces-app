@@ -1,35 +1,39 @@
 @import "../../../styles/variables/colors.module.scss";
+
 .card {
-  background-color: $colorTransparent;
-  width: 350px;
+  background-color: black;
+  width: 309px;
   border-radius: 8px;
   border: 4px;
   border-style: solid;
   border-color: $colorPrimary;
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin-right: 25px;
+  margin-top: 25px;
+  float: inline-end;
+  object-fit: none;
+  object-position: 5px 10%;
+  border: 5px solid red;
 }
 
 .card.isStatic {
-  width: fit-content;
+  width: 1345px;
   display: flex;
   flex-direction: row;
   margin-top: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .title {
   color: $colorPrimary;
   margin-top: 5px;
+  width: fit-content;
 }
 
 .p {
   color: $colorWhite;
-}
-
-.img_container {
-  overflow: hidden;
-  border-radius: 10px;
 }
 
 .img {

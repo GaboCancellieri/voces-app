@@ -14,9 +14,16 @@ const MotionWrapper = ({
   return (
     <motion.div
       whileHover={{ scale }}
-      layout
       onMouseUp={onClick}
       className={classname}
+      whileTap={{ scale: 0.9 }}
+      whileInView={{ opacity: 1 }}
+      initial={{ x: "-300px", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      style={{
+        width: "30rem",
+        position: "relative",
+      }}
     >
       {children}
     </motion.div>

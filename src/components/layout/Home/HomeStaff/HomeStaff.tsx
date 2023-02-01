@@ -3,7 +3,7 @@ import styles from "./homeStaff.module.scss";
 import Typography from "../../../common/Typography";
 import { COLOR_PRIMARY } from "../../../../constants/colors";
 import Card from "ccomponents/Card/Card";
-import CardStatic from "ccomponents/CardStatic/Card";
+
 import { HOME_STAFF, STAFF_IMAGE_PROPS } from "./constants";
 
 const HomeStaff = () => {

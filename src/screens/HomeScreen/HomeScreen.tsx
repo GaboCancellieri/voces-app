@@ -2,6 +2,8 @@ import React from "react";
 import { HomeBanner, HomeNews, HomeLeader } from "src/components/layout/Home";
 import NavBar from "ccomponents/NavBar";
 import styles from "styles/nonAdminScreens.module.scss";
+import HomeStaff from "src/components/layout/Home/HomeStaff";
+import Footer from "ccomponents/Footer";
 
 const HomeScreen = () => {
   return (
@@ -10,6 +12,7 @@ const HomeScreen = () => {
       <HomeBanner></HomeBanner>
       <HomeNews></HomeNews>
       <HomeLeader></HomeLeader>
+      <Footer></Footer>
     </div>
   );
 };

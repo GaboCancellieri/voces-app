@@ -1,3 +1,4 @@
+import { Footer } from "ccomponents/index";
 import NavBar from "ccomponents/NavBar";
 import React from "react";
 import { StreamingBanner } from "src/components/layout";
@@ -8,6 +9,7 @@ const StreamingScreen = () => {
     <div className={styles.nonAdminScreen}>
       <NavBar />
       <StreamingBanner />
+      <Footer></Footer>
     </div>
   );
 };

@@ -19,29 +19,52 @@ import {
 
 const Activities = () => {
   return (
-    <div className={styles.activitiesCards_container}>
-      <div>
+    <div>
+      <div className={styles.activitiesCards_container}>
         <Card
           title={ACTIVITIES_1_TITLE}
           imageProps={ACTIVITIES_1_IMG}
           description={ACTIVITIES_1_DESCRIPTION}
         ></Card>
-      </div>
-      <div>
+
         <Card
           title={ACTIVITIES_2_TITLE}
           imageProps={ACTIVITIES_2_IMG}
           description={ACTIVITIES_2_DESCRIPTION}
         ></Card>
-      </div>
-      <div>
+
         <Card
           title={ACTIVITIES_3_TITLE}
           imageProps={ACTIVITIES_3_IMG}
           description={ACTIVITIES_3_DESCRIPTION}
         ></Card>
+
+        <Card
+          title={ACTIVITIES_4_TITLE}
+          imageProps={ACTIVITIES_4_IMG}
+          description={ACTIVITIES_4_DESCRIPTION}
+        ></Card>
       </div>
-      <div>
+
+      <div className={styles.activitiesCards_container}>
+        <Card
+          title={ACTIVITIES_1_TITLE}
+          imageProps={ACTIVITIES_1_IMG}
+          description={ACTIVITIES_1_DESCRIPTION}
+        ></Card>
+
+        <Card
+          title={ACTIVITIES_2_TITLE}
+          imageProps={ACTIVITIES_2_IMG}
+          description={ACTIVITIES_2_DESCRIPTION}
+        ></Card>
+
+        <Card
+          title={ACTIVITIES_3_TITLE}
+          imageProps={ACTIVITIES_3_IMG}
+          description={ACTIVITIES_3_DESCRIPTION}
+        ></Card>
+
         <Card
           title={ACTIVITIES_4_TITLE}
           imageProps={ACTIVITIES_4_IMG}
