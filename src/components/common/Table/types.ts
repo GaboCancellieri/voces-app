@@ -1,8 +1,8 @@
 export interface TableProps {
   values: { [key: string]: any }[];
   columns: ITableColumn[];
-  onEdit?: () => void;
-  onDelete?: () => void;
+  onEdit?: (element: any) => void;
+  onDelete?: (element: any) => void;
 }
 
 export interface ITableColumn {
@@ -13,6 +13,6 @@ export interface ITableColumn {
 export interface TableItemProps {
   value: { [key: string]: any };
   columns: ITableColumn[];
-  onEdit?: () => void;
-  onDelete?: () => void;
+  onEdit?: (element: any) => void;
+  onDelete?: (element: any) => void;
 }

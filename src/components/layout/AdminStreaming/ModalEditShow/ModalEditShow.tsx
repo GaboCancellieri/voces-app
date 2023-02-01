@@ -1,26 +1,29 @@
 import React, { useState } from "react";
-import styles from "./modalCreateShow.module.scss";
+import styles from "./modalEditShow.module.scss";
 import { Button, Input, Modal, TextArea, Typography } from "ccomponents/index";
 import { COLOR_BLACK } from "constants/colors";
 import { useShowsService } from "src/api/api";
-import { addShow } from "../context/actions";
+import { addShow, editShow, setSelectedShow } from "../context/actions";
+import { IShow } from "src/api/types";
 
-interface ModalCreateShowProps {
+interface ModalEditShowProps {
   isActive: boolean;
+  show?: IShow | null;
   onCancel: () => void;
   dispatch: any;
 }
 
-const ModalCreateShow = ({
+const ModalEditShow = ({
   isActive,
+  show = null,
   dispatch,
   onCancel,
-}: ModalCreateShowProps) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [link, setLink] = useState("");
-  const [imageURL, setImageURL] = useState("");
-  const [isFeatured, setIsFeatured] = useState(false);
+}: ModalEditShowProps) => {
+  const [title, setTitle] = useState(show?.title ?? "");
+  const [description, setDescription] = useState(show?.description ?? "");
+  const [link, setLink] = useState(show?.link ?? "");
+  const [imageURL, setImageURL] = useState(show?.imageURL ?? "");
+  const [isFeatured, setIsFeatured] = useState(show?.isFeatured ?? false);
   const showsService = useShowsService();
 
   const handleCancel = () => {
@@ -29,19 +32,33 @@ const ModalCreateShow = ({
     setLink("");
     setImageURL("");
     setIsFeatured(false);
+    dispatch(setSelectedShow(null));
     onCancel();
   };
 
   const handleSave = async () => {
-    const newShow = {
-      title,
-      description,
-      link,
-      imageURL,
-      isFeatured,
-    };
-    const savedShow = await showsService.create(newShow);
-    dispatch(addShow(savedShow));
+    if (show?.id) {
+      const newShow = {
+        id: show.id,
+        title,
+        description,
+        link,
+        imageURL,
+        isFeatured,
+      };
+      const savedShow = await showsService.update(show.id, newShow);
+      dispatch(editShow(savedShow));
+    } else {
+      const newShow = {
+        title,
+        description,
+        link,
+        imageURL,
+        isFeatured,
+      };
+      const savedShow = await showsService.create(newShow);
+      dispatch(addShow(savedShow));
+    }
     handleCancel();
   };
 
@@ -54,7 +71,7 @@ const ModalCreateShow = ({
     >
       <div className={styles.modalCreateContainer}>
         <Typography color={COLOR_BLACK} fontFamily={"fjallaOne"} size={"30px"}>
-          Nuevo Show!
+          {show ? "Editar Show!" : "Nuevo Show!"}
         </Typography>
         <div className={styles.modalCreateContent}>
           <Typography color={COLOR_BLACK} size={"20px"}>
@@ -101,4 +118,4 @@ const ModalCreateShow = ({
   );
 };
 
-export default ModalCreateShow;
+export default ModalEditShow;

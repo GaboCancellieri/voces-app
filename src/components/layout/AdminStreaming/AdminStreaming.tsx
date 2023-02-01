@@ -4,11 +4,17 @@ import styles from "./adminStreaming.module.scss";
 import { FLAT_COLOR_ICONS } from "constants/icon";
 import { FIT } from "constants/buttons";
 import { RIGHT } from "constants/alignment";
-import ModalCreateShow from "./ModalCreateShow";
 import { useShowsService } from "src/api/api";
 import { showsInitialState, showsReducer } from "./context/reducer";
-import { setShows, toggleShowCreate } from "./context/actions";
+import {
+  deleteShow,
+  setSelectedShow,
+  setShows,
+  toggleShowCreate,
+} from "./context/actions";
 import { columns } from "./constants";
+import ModalEditShow from "./ModalEditShow";
+import { IShow } from "src/api/types";
 
 const AdminStreaming = () => {
   const showsService = useShowsService();
@@ -28,9 +34,19 @@ const AdminStreaming = () => {
     }
   }, []);
 
-  const handleEditShow = () => {};
+  const handleEditShow = (show: IShow) => {
+    dispatchShows(setSelectedShow(show));
+    dispatchShows(toggleShowCreate());
+  };
 
-  const handleDeleteShow = () => {};
+  const handleDeleteShow = async (show: IShow) => {
+    const willDelete = confirm("¿Está seguro que quiere eliminar?");
+    if (willDelete && show && show.id) {
+      console.log("HOLAAA");
+      const deletedShow = await showsService.delete(show.id);
+      dispatchShows(deleteShow(deletedShow.id));
+    }
+  };
 
   return (
     <>
@@ -54,11 +70,14 @@ const AdminStreaming = () => {
           <Typography>No existen shows cargados...</Typography>
         )}
       </div>
-      <ModalCreateShow
-        isActive={showsState.showCreate}
-        dispatch={dispatchShows}
-        onCancel={() => dispatchShows(toggleShowCreate())}
-      />
+      {showsState.showCreate && (
+        <ModalEditShow
+          isActive={showsState.showCreate}
+          show={showsState.selectedShow}
+          dispatch={dispatchShows}
+          onCancel={() => dispatchShows(toggleShowCreate())}
+        />
+      )}
     </>
   );
 };

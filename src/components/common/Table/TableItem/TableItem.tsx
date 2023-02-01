@@ -22,7 +22,7 @@ const TableItem = ({ value, columns, onEdit, onDelete }: TableItemProps) => {
       {onEdit || onDelete ? (
         <td className={styles.td}>
           {onEdit && (
-            <Button onClick={onEdit} size={FIT} variant={"blank"}>
+            <Button onClick={() => onEdit(value)} size={FIT} variant={"blank"}>
               <Icon
                 iconId={"FcEditImage"}
                 iconDesign={FLAT_COLOR_ICONS}
@@ -31,7 +31,11 @@ const TableItem = ({ value, columns, onEdit, onDelete }: TableItemProps) => {
             </Button>
           )}
           {onDelete && (
-            <Button onClick={onDelete} size={FIT} variant={"blank"}>
+            <Button
+              onClick={() => onDelete(value)}
+              size={FIT}
+              variant={"blank"}
+            >
               <Icon
                 iconId={"FcEmptyTrash"}
                 iconDesign={FLAT_COLOR_ICONS}
