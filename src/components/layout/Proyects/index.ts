@@ -1,2 +1,2 @@
-export { default as ProyectsBanner } from "./ProyectsBanner";
+export { default as ProyectBanner } from "./ProyectBanner";
 export { default as AreasBanner } from "./AreasBanner";

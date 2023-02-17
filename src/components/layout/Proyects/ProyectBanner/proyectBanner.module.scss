@@ -1,13 +1,17 @@
 @import "../../../../styles/variables/colors.module.scss";
-.proyectsBannerContainer {
+.proyectBannerContainer {
   justify-content: center;
   width: fit-content;
   margin-top: 2rem;
+}
+.bannerDescription {
+  margin-top: 20px;
   border: solid 4px;
   border-radius: 8px;
   border-color: $colorPrimary;
+  padding: 10px;
 }
 
-.title {
-  margin-top: 30px;
+.proyectBannerContainerMobile {
+  flex-direction: column;
 }

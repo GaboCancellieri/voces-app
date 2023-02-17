@@ -6,6 +6,18 @@ import { COLOR_PRIMARY, COLOR_WHITE } from "constants/colors";
 import { cardInitialState, cardReducer } from "./context/reducer";
 import { toggleOpen } from "./context/actions";
 import { CardProps } from "./types";
+/*const variants = {
+  active: {
+    width: 320,
+    height: 800,
+    borderRadius: 0,
+    overflow: "visible",
+    left: 28,
+    right: 0,
+    y: 0,
+    transition: { duration: 0.125, type: "spring", damping: 10, mass: 0.6 },
+  },
+};*/
 
 const Card = ({
   isStatic = false,
@@ -18,6 +30,7 @@ const Card = ({
   const cardClassName = classnames(styles.card, {
     [styles.isStatic]: isStatic || cardState.open,
   });
+
   return (
     <MotionWrapper isActive={!isStatic} onClick={handleOpen}>
       <div className={cardClassName}>
@@ -38,6 +51,7 @@ const Card = ({
             />
           )}
         </div>
+
         <div className={styles.textContainer}>
           <Typography
             fontFamily="fjallaOne"

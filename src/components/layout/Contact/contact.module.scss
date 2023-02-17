@@ -1,0 +1,37 @@
+@import "../../../styles/variables/colors.module.scss";
+.contactBanner {
+  margin: 25px;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  border: 2px solid $colorPrimary;
+  margin-top: 30px;
+  border-radius: 5px;
+  margin-left: 420px; // una truchada esto
+}
+.title {
+  margin: 30px;
+}
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.formElements {
+  display: flex;
+  background-color: transparent;
+  margin: 20px;
+  border: transparent;
+  border-bottom: 1px solid rgb(3, 226, 241);
+  color: azure;
+  width: 450px;
+}
+
+.button {
+  margin-bottom: 20px;
+}

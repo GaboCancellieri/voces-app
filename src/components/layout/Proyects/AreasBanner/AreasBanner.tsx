@@ -1,22 +1,33 @@
-import React from "react";
-import Card from "ccomponents/Card";
-import Typography from "ccomponents/Typography";
-import { COLOR_PRIMARY } from "constants/colors";
+import { Card, Typography } from "ccomponents/index";
+import { COLOR_PRIMARY } from "../../../../constants/colors";
+import connect from "src/context/Store/connect";
+import { WindowSizeStateContext } from "src/context/WindowSizeProvider/WindowSizeProvider";
+import { IWindowSizeState } from "src/context/WindowSizeProvider/types";
+import classnames from "classnames";
+import { IProyectAreas } from "src/api/types";
+import { useProyectAreasService } from "src/api/api";
+import React, { useEffect, useState } from "react";
 import styles from "./areasBanner.module.scss";
-import {
-  AREAS_BANNER_TITLE,
-  BANNER_DEPRODUCCION,
-  BANNER_DEPROYECTOS,
-  BANNER_FORMATIVAS,
-  BANNER_RECREATIVA,
-  EXAMPLE_PARAGRAPH,
-  IMAGEN_DEPRODUCCION,
-  IMAGEN_DEPROYECTOS,
-  IMAGEN_FORMATIVAS,
-  IMAGEN_RECREATIVA,
-} from "./constants";
+interface AreasProps {
+  isDesktop: boolean;
+  isMobile: boolean;
+}
 
-const AreasBanner = () => {
+const ProyectAreas = ({ isDesktop, isMobile }: AreasProps) => {
+  const proyectAreasService = useProyectAreasService();
+  const [areasInfo, setAreasInfo] = useState<IProyectAreas | null>(null);
+
+  const handleGet = async () => {
+    const result = await proyectAreasService.get();
+    setAreasInfo(result);
+  };
+
+  useEffect(() => {
+    if (!areasInfo) {
+      handleGet();
+    }
+  }, []);
+
   return (
     <div>
       <div className={styles.title}>
@@ -26,39 +37,46 @@ const AreasBanner = () => {
           size="50px"
           variant="bold"
         >
-          {AREAS_BANNER_TITLE}
+          AREAS
         </Typography>
       </div>
-      <div>
-        <Card
-          isStatic
-          title={BANNER_FORMATIVAS}
-          imageProps={IMAGEN_FORMATIVAS}
-          description={EXAMPLE_PARAGRAPH}
-        ></Card>
-        <Card
-          isStatic
-          title={BANNER_RECREATIVA}
-          imageProps={IMAGEN_RECREATIVA}
-          description={EXAMPLE_PARAGRAPH}
-        ></Card>
-
-        <Card
-          isStatic
-          title={BANNER_DEPROYECTOS}
-          imageProps={IMAGEN_DEPROYECTOS}
-          description={EXAMPLE_PARAGRAPH}
-        ></Card>
-
-        <Card
-          isStatic
-          title={BANNER_DEPRODUCCION}
-          imageProps={IMAGEN_DEPRODUCCION}
-          description={EXAMPLE_PARAGRAPH}
-        ></Card>
-      </div>
+      {areasInfo && (
+        <div
+          className={classnames(styles.areasContainer, {
+            [styles.areasContainerMobile]: isMobile,
+          })}
+        >
+          <div className={styles.cards}>
+            {JSON.parse(JSON.stringify(areasInfo)).map((areasInfo: any) => (
+              <div>
+                <Card
+                  isStatic
+                  title={areasInfo.title}
+                  description={areasInfo.description}
+                  imageProps={{
+                    width: "292px",
+                    height: "202px",
+                    altText: "",
+                    url: areasInfo.imageURL,
+                  }}
+                ></Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default AreasBanner;
+const mapStateToProps = [
+  {
+    context: WindowSizeStateContext,
+    mapStateToProps: ({ isDesktop, isMobile }: IWindowSizeState) => ({
+      isDesktop,
+      isMobile,
+    }),
+  },
+];
+
+export default connect({ mapStateToProps })(ProyectAreas);

@@ -16,6 +16,10 @@ export const NAV_BAR_OPTIONS = [
     name: "STREAMING",
   },
   {
+    link: "/gallery",
+    name: "GALERÍA",
+  },
+  {
     link: "/contact",
     name: "CONTACTO",
   },

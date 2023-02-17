@@ -3,10 +3,30 @@ import { showAlert } from "src/context/AlertContext/actions";
 import { AlertDispatchContext } from "src/context/AlertContext/AlertContext";
 import { LoginService } from "./services";
 import HomeBannerService from "./services/HomeBannerService";
+import ProyectBannerService from "./services/ProyectBannerService";
 import ShowsService from "./services/ShowsService";
+import ProyectAreasService from "./services/ProyectAreasService";
+import ActivitiesCardsService from "./services/ActivitiesCardsService";
+import HomeNewsService from "./services/HomeNewsService";
+
+export const useActivitiesCardsService = () => {
+  return new ActivitiesCardsService(useContext(AlertDispatchContext));
+};
 
 export const useHomeBannerService = () => {
   return new HomeBannerService(useContext(AlertDispatchContext));
+};
+
+export const useHomeNewsService = () => {
+  return new HomeNewsService(useContext(AlertDispatchContext));
+};
+
+export const useProyectBannerService = () => {
+  return new ProyectBannerService(useContext(AlertDispatchContext));
+};
+
+export const useProyectAreasService = () => {
+  return new ProyectAreasService(useContext(AlertDispatchContext));
 };
 
 export const useShowsService = () => {

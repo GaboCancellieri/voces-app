@@ -1,3 +1,3 @@
-import Activities from "./Activities";
+import ActivitiesCards from "./ActivitiesCards";
 
-export default Activities;
+export default ActivitiesCards;

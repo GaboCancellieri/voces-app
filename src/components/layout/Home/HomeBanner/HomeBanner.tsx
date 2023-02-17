@@ -57,7 +57,12 @@ const HomeBanner = ({ isDesktop, isMobile }: HomeBannerProps) => {
               {homeBannerInfo.title}
             </Typography>
             {isDesktop && (
-              <Typography align="justify">
+              <Typography
+                align="justify"
+                fontFamily="fjallaOne"
+                size="20px"
+                variant="bold"
+              >
                 <p>{homeBannerInfo.description}</p>
               </Typography>
             )}

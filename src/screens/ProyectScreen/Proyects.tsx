@@ -1,5 +1,5 @@
 import React from "react";
-import { AreasBanner, ProyectsBanner } from "src/components/layout/Proyects";
+import { AreasBanner, ProyectBanner } from "src/components/layout/Proyects";
 import NavBar from "ccomponents/NavBar";
 import styles from "styles/nonAdminScreens.module.scss";
 import { Footer } from "ccomponents/index";
@@ -8,7 +8,7 @@ const Proyects = () => {
   return (
     <div className={styles.nonAdminScreen}>
       <NavBar />
-      <ProyectsBanner></ProyectsBanner>
+      <ProyectBanner></ProyectBanner>
       <AreasBanner></AreasBanner>
       <Footer></Footer>
     </div>

@@ -21,7 +21,7 @@ const MotionWrapper = ({
       initial={{ x: "-300px", opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       style={{
-        width: "30rem",
+        width: "fit-content",
         position: "relative",
       }}
     >

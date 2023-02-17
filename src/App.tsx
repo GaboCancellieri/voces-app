@@ -1,12 +1,17 @@
 import React from "react";
 import {
+  AdminProyect,
   ActivitieScreen,
   AdminDashboardScreen,
   AdminHomeScreen,
   AdminStreamingScreen,
   HomeScreen,
-  Proyects,
+  ProyectScreen,
   StreamingScreen,
+  ContactScreen,
+  AdminActivitiesScreen,
+  GalleryScreen,
+  PlatformScreen,
 } from "./screens";
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
@@ -17,9 +22,13 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomeScreen />} />
-        <Route path="/proyects" element={<Proyects />} />
+        <Route path="/proyects" element={<ProyectScreen />} />
         <Route path="/activities" element={<ActivitieScreen />} />
         <Route path="/streaming" element={<StreamingScreen />} />
+        <Route path="/contact" element={<ContactScreen />} />
+        <Route path="/gallery" element={<GalleryScreen />} />
+        <Route path="/platform" element={<PlatformScreen />} />
+
         <Route
           path="/admin"
           element={
@@ -29,10 +38,26 @@ const App = () => {
           }
         />
         <Route
+          path="/admin/activities"
+          element={
+            <AdminWrapper>
+              <AdminActivitiesScreen />
+            </AdminWrapper>
+          }
+        />
+        <Route
           path="/admin/home"
           element={
             <AdminWrapper>
               <AdminHomeScreen />
+            </AdminWrapper>
+          }
+        />
+        <Route
+          path="/admin/proyects"
+          element={
+            <AdminWrapper>
+              <AdminProyect />
             </AdminWrapper>
           }
         />

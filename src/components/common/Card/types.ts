@@ -2,7 +2,7 @@ import { ImageProps } from "ccomponents/Image/types";
 
 export interface CardProps {
   isStatic?: boolean;
-  title: string;
+  title?: string;
   description?: string;
-  imageProps?: ImageProps;
+  imageProps: ImageProps;
 }
