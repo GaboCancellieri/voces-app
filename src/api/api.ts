@@ -1,13 +1,16 @@
 import { useContext } from "react";
 import { showAlert } from "src/context/AlertContext/actions";
 import { AlertDispatchContext } from "src/context/AlertContext/AlertContext";
-import { LoginService } from "./services";
-import HomeBannerService from "./services/HomeBannerService";
-import ProyectBannerService from "./services/ProyectBannerService";
-import ShowsService from "./services/ShowsService";
-import ProyectAreasService from "./services/ProyectAreasService";
-import ActivitiesCardsService from "./services/ActivitiesCardsService";
-import HomeNewsService from "./services/HomeNewsService";
+import {
+  LoginService,
+  HomeBannerService,
+  HomeStaffService,
+  ProyectBannerService,
+  ShowsService,
+  ProyectAreasService,
+  ActivitiesCardsService,
+  HomeNewsService,
+} from "./services";
 
 export const useActivitiesCardsService = () => {
   return new ActivitiesCardsService(useContext(AlertDispatchContext));
@@ -19,6 +22,10 @@ export const useHomeBannerService = () => {
 
 export const useHomeNewsService = () => {
   return new HomeNewsService(useContext(AlertDispatchContext));
+};
+
+export const useHomeStaffService = () => {
+  return new HomeStaffService(useContext(AlertDispatchContext));
 };
 
 export const useProyectBannerService = () => {

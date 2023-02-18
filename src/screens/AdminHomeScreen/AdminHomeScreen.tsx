@@ -2,7 +2,10 @@ import React from "react";
 import { AdminBar, Typography } from "ccomponents/index";
 import screenStyles from "styles/adminScreens.module.scss";
 import { COLOR_PRIMARY } from "constants/colors";
-import { AdminHomeBanner } from "src/components/layout/AdminHome";
+import {
+  AdminHomeBanner,
+  AdminHomeStaff,
+} from "src/components/layout/AdminHome";
 import { LEFT } from "constants/alignment";
 
 const AdminHomeScreen = () => {
@@ -19,6 +22,16 @@ const AdminHomeScreen = () => {
           PANTALLA PRINCIPAL
         </Typography>
         <AdminHomeBanner />
+        <Typography
+          fontFamily={"fjallaOne"}
+          size={"50px"}
+          color={COLOR_PRIMARY}
+          align={LEFT}
+        >
+          STAFF
+        </Typography>
+
+        <AdminHomeStaff></AdminHomeStaff>
       </div>
     </div>
   );

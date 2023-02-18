@@ -6,4 +6,5 @@ export const ROUTES = {
   PROYECT_AREAS: "http://localhost:3001/api/proyectAreas",
   ACTIVITIES_CARDS: "http://localhost:3001/api/activitiesCards",
   HOME_NEWS: "http://localhost:3001/api/homeNews",
+  HOME_STAFF: "http://localhost:3001/api/homeStaff",
 };

@@ -12,6 +12,7 @@ const HomeScreen = () => {
       <HomeBanner></HomeBanner>
       <HomeNews></HomeNews>
       <HomeLeader></HomeLeader>
+      <HomeStaff></HomeStaff>
       <Footer></Footer>
     </div>
   );

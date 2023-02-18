@@ -1,4 +1,4 @@
-import { Footer } from "ccomponents/index";
+import { Carousel, Footer } from "ccomponents/index";
 import NavBar from "ccomponents/NavBar";
 import React from "react";
 import { StreamingBanner, StreamingShows } from "src/components/layout";
@@ -9,6 +9,7 @@ const StreamingScreen = () => {
     <div className={styles.nonAdminScreen}>
       <NavBar />
       <StreamingBanner />
+      <Carousel></Carousel>
       <StreamingShows />
 
       <Footer />

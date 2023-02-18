@@ -11,3 +11,4 @@ export { default as StreamingShows } from "./Streaming/StreamingShows";
 export { default as AdminProyectAreas } from "./AdminProyects/AdminProyectAreas";
 export { default as Contact } from "./Contact";
 export { default as AdminActivitiesCards } from "./AdminActivities/index";
+export { default as AdminHomeStaff } from "./AdminHome/AdminHomeStaff/index";

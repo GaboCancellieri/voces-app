@@ -1,21 +1,14 @@
 @import "../../../../styles/variables/colors.module.scss";
 .staff_container {
-  background-color: $colorTransparent;
-  width: 100%;
-  border: 2px;
-  border-style: solid;
-  border-color: $colorPrimary;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .staff_cards {
-  background-color: $colorTransparent;
-  width: 100%;
-  height: 200px;
-  border: 2px;
-  border-style: solid;
-  border-color: $colorPrimary;
-
-  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
