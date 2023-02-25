@@ -9,7 +9,7 @@ const StreamingScreen = () => {
     <div className={styles.nonAdminScreen}>
       <NavBar />
       <StreamingBanner />
-      <Carousel></Carousel>
+
       <StreamingShows />
 
       <Footer />

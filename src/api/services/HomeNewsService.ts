@@ -23,12 +23,31 @@ class HomeNewsService extends Component<{}, { dispatch: any }> {
     }
   }
 
+  async create(payload: IHomeNews) {
+    const result = await handleAlert(
+      () =>
+        http.post(`${rootURL}`, {
+          ...payload,
+        }),
+      this.state.dispatch
+    );
+    return result;
+  }
+
   async update(id: string, payload: IHomeNews) {
     const result = await handleAlert(
       () =>
         http.patch(`${rootURL}/${id}`, {
           ...payload,
         }),
+      this.state.dispatch
+    );
+    return result;
+  }
+
+  async delete(id: string) {
+    const result = await handleAlert(
+      () => http.delete(`${rootURL}/${id}`),
       this.state.dispatch
     );
     return result;

@@ -5,6 +5,7 @@ import { COLOR_PRIMARY } from "constants/colors";
 import {
   AdminHomeBanner,
   AdminHomeStaff,
+  AdminHomeNews,
 } from "src/components/layout/AdminHome";
 import { LEFT } from "constants/alignment";
 
@@ -22,6 +23,17 @@ const AdminHomeScreen = () => {
           PANTALLA PRINCIPAL
         </Typography>
         <AdminHomeBanner />
+        <Typography
+          fontFamily={"fjallaOne"}
+          size={"50px"}
+          color={COLOR_PRIMARY}
+          align={LEFT}
+        >
+          NOVEDADES
+        </Typography>
+
+        <AdminHomeNews></AdminHomeNews>
+
         <Typography
           fontFamily={"fjallaOne"}
           size={"50px"}

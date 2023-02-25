@@ -2,6 +2,7 @@ import React from "react";
 import { Image } from "../index";
 import MultiCarousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { CarouselProps } from "./types";
 
 const responsive = {
   desktop: {
@@ -21,7 +22,7 @@ const responsive = {
   },
 };
 
-export const Carousel = () => {
+export const Carousel = ({ title, description, imageProps }: CarouselProps) => {
   return (
     <MultiCarousel
       additionalTransfrom={0}
@@ -69,29 +70,14 @@ export const Carousel = () => {
       sliderClass=""
       slidesToSlide={1}
     >
-      <Image
-        width={"1368px"}
-        height={"650px"}
-        altText={"asd"}
-        url={
-          "https://img.freepik.com/foto-gratis/mujer-auriculares-grabando-musica_155003-16942.jpg?w=2000"
-        }
-      ></Image>
-
-      <Image
-        width={"1368px"}
-        height={"650px"}
-        altText={"asd"}
-        url={"https://definicion.de/wp-content/uploads/2016/06/canto-1.jpg"}
-      ></Image>
-      <Image
-        width={"1368px"}
-        height={"650px"}
-        altText={"asd"}
-        url={
-          "https://www.escolanossocanto.com.br/images/blog/o-canto--muda-o-seu-cerebro.jpg"
-        }
-      ></Image>
+      <div>
+        <Image
+          url={imageProps.url}
+          altText={imageProps.altText}
+          width={imageProps.width}
+          height={imageProps.height}
+        />
+      </div>
     </MultiCarousel>
   );
 };
