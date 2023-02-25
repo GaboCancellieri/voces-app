@@ -7,11 +7,6 @@ export const USER_MENU_OPTIONS = [
     name: "Mi Cuenta",
   },
   {
-    key: "myTickets",
-    isAdmin: false,
-    name: "Mis Entradas",
-  },
-  {
     key: "editPage",
     isAdmin: true,
     name: "Editar Página",

@@ -12,10 +12,11 @@ import {
   AdminActivitiesScreen,
   GalleryScreen,
   PlatformScreen,
+  UserAccountScreen,
 } from "./screens";
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import { AdminWrapper } from "ccomponents/index";
+import { AdminWrapper, UserWrapper } from "ccomponents/index";
 
 const App = () => {
   return (
@@ -67,6 +68,14 @@ const App = () => {
             <AdminWrapper>
               <AdminStreamingScreen />
             </AdminWrapper>
+          }
+        />
+        <Route
+          path="/user"
+          element={
+            <UserWrapper>
+              <UserAccountScreen />
+            </UserWrapper>
           }
         />
       </Routes>

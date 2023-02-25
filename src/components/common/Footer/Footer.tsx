@@ -49,19 +49,21 @@ const Footer = () => {
             {LINKS}
           </Typography>
 
-          {LINKS_OPTIONS.map((option) => {
+          {LINKS_OPTIONS.map((option, index) => {
             return (
-              <Link to={option.link}>
-                <Button variant="blank" hoverEffect align="left" size="fit">
-                  <Typography
-                    fontFamily="fjallaOne"
-                    size={"15px"}
-                    color={COLOR_WHITE}
-                  >
-                    {option.name}
-                  </Typography>
-                </Button>
-              </Link>
+              <div key={index}>
+                <Link to={option.link}>
+                  <Button variant="blank" hoverEffect align="left" size="fit">
+                    <Typography
+                      fontFamily="fjallaOne"
+                      size={"15px"}
+                      color={COLOR_WHITE}
+                    >
+                      {option.name}
+                    </Typography>
+                  </Button>
+                </Link>
+              </div>
             );
           })}
         </div>

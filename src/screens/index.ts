@@ -10,3 +10,4 @@ export { default as HomeScreen } from "./HomeScreen";
 export { default as PlatformScreen } from "./PlatformScreen";
 export { default as ProyectScreen } from "./ProyectScreen";
 export { default as StreamingScreen } from "./StreamingScreen";
+export { default as UserAccountScreen } from "./UserAccountScreen";

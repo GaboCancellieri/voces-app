@@ -33,8 +33,11 @@ const UserMenu = ({
     switch (key) {
       case "editPage":
         return navigate("/admin");
+      case "account":
+        return navigate("/user");
       case "logout":
         onClose();
+        navigate("/");
         return logout(dispatchUser);
       default:
         return;

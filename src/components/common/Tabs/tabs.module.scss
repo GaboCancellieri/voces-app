@@ -1,0 +1,30 @@
+@import "../../../styles/variables/colors.module.scss";
+
+.tabs {
+  border-radius: 10px;
+  border: 4px;
+  border-style: solid;
+  border-color: $colorPrimary;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.tabsContainer {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid $colorGrey;
+  padding-bottom: 5px;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.tabNavItemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

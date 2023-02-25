@@ -1,4 +1,4 @@
-import { Carousel, Typography } from "ccomponents/index";
+import { Carousel, Typography, Image } from "ccomponents/index";
 import { COLOR_PRIMARY } from "../../../../constants/colors";
 import connect from "src/context/Store/connect";
 import { WindowSizeStateContext } from "src/context/WindowSizeProvider/WindowSizeProvider";
@@ -15,10 +15,11 @@ interface NewsProps {
 
 const HomeNews = ({ isDesktop, isMobile }: NewsProps) => {
   const homeNewsService = useHomeNewsService();
-  const [newsInfo, setNewsInfo] = useState<IHomeNews | null>(null);
+  const [newsInfo, setNewsInfo] = useState<IHomeNews[] | null>(null);
 
   const handleGet = async () => {
     const result = await homeNewsService.get();
+    console.log(result);
     setNewsInfo(result);
   };
 
@@ -47,16 +48,20 @@ const HomeNews = ({ isDesktop, isMobile }: NewsProps) => {
           })}
         >
           <div>
-            {JSON.parse(JSON.stringify(newsInfo)).map((newsInfo: any) => (
-              <Carousel
-                imageProps={{
-                  width: "1368px",
-                  height: "650px",
-                  altText: "",
-                  url: newsInfo.imageURL,
-                }}
-              />
-            ))}
+            <Carousel>
+              {newsInfo.map((news) => {
+                return (
+                  <div key={news.id}>
+                    <Image
+                      width={"1368px"}
+                      height={"650px"}
+                      altText={""}
+                      url={news.imageURL}
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
           </div>
         </div>
       )}

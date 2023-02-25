@@ -15,7 +15,7 @@ interface StaffProps {
 
 const HomeStaff = ({ isDesktop, isMobile }: StaffProps) => {
   const homeStaffService = useHomeStaffService();
-  const [staffInfo, setStaffInfo] = useState<IHomeStaff | null>(null);
+  const [staffInfo, setStaffInfo] = useState<IHomeStaff[] | null>(null);
 
   const handleGet = async () => {
     const result = await homeStaffService.get();
@@ -47,8 +47,8 @@ const HomeStaff = ({ isDesktop, isMobile }: StaffProps) => {
           })}
         >
           <div className={styles.cards}>
-            {JSON.parse(JSON.stringify(staffInfo)).map((staffInfo: any) => (
-              <div>
+            {staffInfo.map((staffInfo) => (
+              <div key={staffInfo.id}>
                 <Card
                   title={staffInfo.title}
                   description={staffInfo.description}

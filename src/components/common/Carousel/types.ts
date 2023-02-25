@@ -1,7 +1,6 @@
 import { ImageProps } from "ccomponents/Image/types";
+import { ReactNode } from "react";
 
 export interface CarouselProps {
-  title?: string;
-  description?: string;
-  imageProps: ImageProps;
+  children: ReactNode;
 }

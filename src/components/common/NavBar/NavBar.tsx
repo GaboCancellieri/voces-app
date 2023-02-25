@@ -31,13 +31,15 @@ const NavBar = ({ currentUser }: NavBarProps) => {
           <Link to="/">
             <Logo height="100%" width="75px" />
           </Link>
-          {NAV_BAR_OPTIONS.map((option) => {
+          {NAV_BAR_OPTIONS.map((option, index) => {
             return (
-              <Link to={option.link}>
-                <Button variant="blank" hoverEffect>
-                  {option.name}
-                </Button>
-              </Link>
+              <div key={index}>
+                <Link to={option.link}>
+                  <Button variant="blank" hoverEffect>
+                    {option.name}
+                  </Button>
+                </Link>
+              </div>
             );
           })}
           {!currentUser ? (

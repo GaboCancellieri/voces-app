@@ -1,5 +1,4 @@
 import React from "react";
-import { Image } from "../index";
 import MultiCarousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CarouselProps } from "./types";
@@ -22,7 +21,7 @@ const responsive = {
   },
 };
 
-export const Carousel = ({ title, description, imageProps }: CarouselProps) => {
+export const Carousel = ({ children }: CarouselProps) => {
   return (
     <MultiCarousel
       additionalTransfrom={0}
@@ -70,14 +69,7 @@ export const Carousel = ({ title, description, imageProps }: CarouselProps) => {
       sliderClass=""
       slidesToSlide={1}
     >
-      <div>
-        <Image
-          url={imageProps.url}
-          altText={imageProps.altText}
-          width={imageProps.width}
-          height={imageProps.height}
-        />
-      </div>
+      {children}
     </MultiCarousel>
   );
 };

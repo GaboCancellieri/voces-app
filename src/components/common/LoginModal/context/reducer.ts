@@ -3,8 +3,8 @@ import * as Actions from "./actions";
 import { LoginState } from "./types";
 
 export const loginInitialState: LoginState = {
-  email: null,
-  password: null,
+  email: "",
+  password: "",
   isSubmitted: false,
   isError: false,
 };
