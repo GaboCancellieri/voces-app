@@ -23,8 +23,18 @@ const ModalEditShow = ({
   const [description, setDescription] = useState(show?.description ?? "");
   const [link, setLink] = useState(show?.link ?? "");
   const [imageURL, setImageURL] = useState(show?.imageURL ?? "");
-  const [isFeatured, setIsFeatured] = useState(show?.isFeatured ?? false);
+  const [isFeatured, setIsFeatured] = useState(false);
   const showsService = useShowsService();
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleChange = () => {
+    setIsChecked(!isChecked);
+    setIsFeatured((current) => !current);
+  };
+
+  console.log("✅ Checkbox is checked");
+
+  console.log(show?.isFeatured);
 
   const handleCancel = () => {
     setTitle("");
@@ -46,7 +56,9 @@ const ModalEditShow = ({
         imageURL,
         isFeatured,
       };
+
       const savedShow = await showsService.update(show.id, newShow);
+
       dispatch(editShow(savedShow));
     } else {
       const newShow = {
@@ -103,8 +115,9 @@ const ModalEditShow = ({
             onChange={(event: any) => setImageURL(event?.target.value)}
           />
           <Typography color={COLOR_BLACK} size={"20px"}>
-            ¿es un estreno?
+            ¿Es un estreno?
           </Typography>
+          <input type="checkbox" checked={isChecked} onChange={handleChange} />
         </div>
         <Button
           variant={"success"}

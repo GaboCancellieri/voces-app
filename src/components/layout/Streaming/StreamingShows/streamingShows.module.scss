@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   // width: 100%;
-  margin-top: 2rem;
 }
 
 .showsContainerMobile {
@@ -17,4 +16,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+
+.title {
+  margin: 20px 0px 20px 0px;
 }

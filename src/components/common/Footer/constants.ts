@@ -36,4 +36,4 @@ export const FOOTER_COPYRIGHT =
   " Copyright © 2022 - Todos los derechos reservados por Voces";
 
 export const FOOTER_DESIGN =
-  " Diseño y Desarrollo a cargo de Gabo el wacho piola";
+  " Diseño y Desarrollo a cargo de Gabriel Cancellieri";

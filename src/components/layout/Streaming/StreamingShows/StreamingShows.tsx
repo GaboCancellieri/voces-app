@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./streamingShows.module.scss";
-import { Card, Typography } from "ccomponents/index";
+import { Card, Carousel, Typography, Image } from "ccomponents/index";
 import connect from "src/context/Store/connect";
 import { WindowSizeStateContext } from "src/context/WindowSizeProvider/WindowSizeProvider";
 import { IWindowSizeState } from "src/context/WindowSizeProvider/types";
@@ -8,6 +8,7 @@ import classnames from "classnames";
 import { IShow } from "src/api/types";
 import { useShowsService } from "src/api/api";
 import { COLOR_PRIMARY } from "constants/colors";
+import CardStreaming from "ccomponents/CardStreaming";
 
 interface ShowsProps {
   isDesktop: boolean;
@@ -16,7 +17,15 @@ interface ShowsProps {
 
 const StreamingShows = ({ isDesktop, isMobile }: ShowsProps) => {
   const streamingShowsService = useShowsService();
-  const [showsInfo, setShowsInfo] = useState<IShow | null>(null);
+  const [showsInfo, setShowsInfo] = useState<IShow[] | null>(null);
+  const imgArray: any = [];
+
+  showsInfo?.forEach((show) => {
+    if (show.isFeatured) {
+      imgArray.push(show);
+    }
+  });
+  console.log(imgArray);
 
   const handleGet = async () => {
     const result = await streamingShowsService.get();
@@ -31,23 +40,41 @@ const StreamingShows = ({ isDesktop, isMobile }: ShowsProps) => {
 
   return (
     <div>
+      <div>
+        <Carousel>
+          {imgArray?.map((img: any) => {
+            return (
+              <div key={img.id}>
+                <Image
+                  width={"1368px"}
+                  height={"650px"}
+                  altText={""}
+                  url={img.imageURL}
+                />
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
       {showsInfo && (
         <div
           className={classnames(styles.showsContainer, {
             [styles.showsContainerMobile]: isMobile,
           })}
         >
-          <Typography
-            color={COLOR_PRIMARY}
-            fontFamily={"fjallaOne"}
-            size={"50px"}
-          >
-            CARTELERA
-          </Typography>
+          <div className={styles.title}>
+            <Typography
+              color={COLOR_PRIMARY}
+              fontFamily={"fjallaOne"}
+              size={"50px"}
+            >
+              CARTELERA
+            </Typography>
+          </div>
           <div className={styles.cards}>
             {JSON.parse(JSON.stringify(showsInfo)).map((showsInfo: any) => (
               <div>
-                <Card
+                <CardStreaming
                   title={showsInfo.title}
                   description={showsInfo.description}
                   imageProps={{
@@ -56,7 +83,7 @@ const StreamingShows = ({ isDesktop, isMobile }: ShowsProps) => {
                     altText: "",
                     url: showsInfo.imageURL,
                   }}
-                ></Card>
+                ></CardStreaming>
               </div>
             ))}
           </div>

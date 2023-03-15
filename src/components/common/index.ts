@@ -4,6 +4,7 @@ export { default as UserWrapper } from "./UserWrapper";
 export { default as Alert } from "./Alert";
 export { default as Button } from "./Button";
 export { default as Card } from "./Card";
+export { default as CardTicket } from "./CardTicket";
 export { default as Carousel } from "./Carousel";
 export { default as Footer } from "./Footer";
 export { default as Icon } from "./Icon";

@@ -3,19 +3,20 @@ import connect from "src/context/Store/connect";
 import { UserStateContext } from "src/context/UserContext/UserContext";
 import { IUserState } from "src/context/UserContext/types";
 import { UserAccountDetailsProps } from "./types";
-import { Card } from "ccomponents/index";
+import { CardTicket } from "ccomponents/index";
 import { USER_TICKETS } from "./constants";
 import { format } from "date-fns";
+import styles from "./userTickets.module.scss";
 
 const UserTickets = ({ currentUser }: UserAccountDetailsProps) => {
   console.log({ currentUser });
   if (!currentUser) return <></>;
   return (
-    <div>
+    <div className={styles.tickets}>
       {USER_TICKETS.map((ticket, index) => {
         return (
           <div key={index}>
-            <Card
+            <CardTicket
               description={`
                 Inicio: ${format(ticket.startDate, "dd/mm/yyyy")}
                 Fin: ${format(ticket.endDate, "dd/mm/yyyy")}
@@ -27,7 +28,7 @@ const UserTickets = ({ currentUser }: UserAccountDetailsProps) => {
                 altText: "",
                 url: ticket.imageURL,
               }}
-            ></Card>
+            ></CardTicket>
           </div>
         );
       })}

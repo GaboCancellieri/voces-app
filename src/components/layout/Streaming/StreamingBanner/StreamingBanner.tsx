@@ -1,10 +1,11 @@
 import React from "react";
-import { Typography } from "ccomponents/index";
+import { Carousel, Typography, Image } from "ccomponents/index";
 import { COLOR_PRIMARY } from "constants/colors";
+import styles from "./streamingBanner.module.scss";
 
 const StreamingBanner = () => {
   return (
-    <div>
+    <div className={styles.title}>
       <Typography color={COLOR_PRIMARY} fontFamily={"fjallaOne"} size={"50px"}>
         ESTRENOS
       </Typography>

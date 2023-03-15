@@ -11,6 +11,7 @@ import {
   ActivitiesCardsService,
   HomeNewsService,
 } from "./services";
+import UsersService from "./services/UsersService";
 
 export const useActivitiesCardsService = () => {
   return new ActivitiesCardsService(useContext(AlertDispatchContext));
@@ -42,6 +43,10 @@ export const useShowsService = () => {
 
 export const useLoginService = () => {
   return new LoginService(useContext(AlertDispatchContext));
+};
+
+export const useUsersService = () => {
+  return new UsersService(useContext(AlertDispatchContext));
 };
 
 export const handleAlert = async (func: Function, dispatch: any) => {

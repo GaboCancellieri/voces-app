@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import styles from "./card.module.scss";
 import classnames from "classnames";
 import { MotionWrapper, Typography, Image } from "ccomponents/index";

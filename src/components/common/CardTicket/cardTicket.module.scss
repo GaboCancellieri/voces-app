@@ -1,0 +1,22 @@
+@import "../../../styles/variables/colors.module.scss";
+.cardTicket {
+  background-color: rgb(0, 0, 0);
+  width: 293px;
+  border-radius: 8px;
+  border: 4px;
+  border-style: solid;
+  border-color: $colorPrimary;
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.img {
+  padding: 0.5rem;
+}

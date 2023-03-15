@@ -8,7 +8,7 @@ import {
 } from "src/context/UserContext/UserContext";
 import { IUserState } from "src/context/UserContext/types";
 import { Button, Typography } from "ccomponents/index";
-import { COLOR_BLACK } from "constants/colors";
+import { COLOR_BLACK, COLOR_PRIMARY } from "constants/colors";
 import { USER_MENU_OPTIONS } from "./constants";
 import { logout } from "./utils";
 import { useNavigate } from "react-router-dom";
@@ -47,11 +47,13 @@ const UserMenu = ({
   return (
     <div className={styles.userMenuContainer}>
       <div className={styles.userMenuContent}>
-        <Typography
-          fontFamily={"fjallaOne"}
-          size={"25px"}
-          color={COLOR_BLACK}
-        >{`${name} ${lastName}`}</Typography>
+        <div className={styles.userName}>
+          <Typography
+            fontFamily={"fjallaOne"}
+            size={"25px"}
+            color={COLOR_PRIMARY}
+          >{`${name} ${lastName}`}</Typography>
+        </div>
         {menuOptions.map((option) => {
           return (
             <div key={option.key} className={styles.userMenuOption}>

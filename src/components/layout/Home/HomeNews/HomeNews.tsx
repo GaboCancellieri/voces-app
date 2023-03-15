@@ -19,7 +19,7 @@ const HomeNews = ({ isDesktop, isMobile }: NewsProps) => {
 
   const handleGet = async () => {
     const result = await homeNewsService.get();
-    console.log(result);
+
     setNewsInfo(result);
   };
 

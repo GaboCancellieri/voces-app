@@ -4,20 +4,24 @@
 .userMenuContainer {
   position: absolute;
   top: 70px;
-  right: 360px;
+  right: 280px;
   width: 300px;
   height: fit-content;
   border-radius: 20px;
   background: $colorAlmostWhite;
-  z-index: z('adminBar');
+  z-index: z("adminBar");
 }
 
 .userMenuContent {
   padding: 15px;
 }
-
+.userName {
+  padding-bottom: 10px;
+  border-bottom: solid 2px $colorBlack;
+}
 .userMenuOption {
   margin-top: 1rem;
   border: 1px solid $colorBlack;
+  border-radius: 5%;
   cursor: pointer;
 }

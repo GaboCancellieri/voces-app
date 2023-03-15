@@ -9,8 +9,8 @@ export interface IShow {
   title?: string;
   description?: string;
   link: string;
-  imageURL?: string;
-  isFeatured?: boolean;
+  imageURL: string;
+  isFeatured: boolean;
 }
 
 export interface IProyectBannerInfo {
@@ -44,4 +44,11 @@ export interface IHomeStaff {
   title?: string;
   description?: string;
   imageURL: string;
+}
+export interface IUser {
+  name: string;
+  lastName: string;
+  email: string;
+  isAdmin: boolean;
+  isActive: boolean;
 }
