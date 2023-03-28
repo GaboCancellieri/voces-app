@@ -15,9 +15,9 @@ interface ActivitiesProps {
 
 const ActivitiesCards = ({ isDesktop, isMobile }: ActivitiesProps) => {
   const activitiesCardsService = useActivitiesCardsService();
-  const [activitiesInfo, setActivitiesInfo] = useState<IActivitiesCards | null>(
-    null
-  );
+  const [activitiesInfo, setActivitiesInfo] = useState<
+    IActivitiesCards[] | null
+  >(null);
 
   const handleGet = async () => {
     const result = await activitiesCardsService.get();
@@ -40,22 +40,20 @@ const ActivitiesCards = ({ isDesktop, isMobile }: ActivitiesProps) => {
           })}
         >
           <div className={styles.cards}>
-            {JSON.parse(JSON.stringify(activitiesInfo)).map(
-              (activitiesInfo: any) => (
-                <div>
-                  <Card
-                    title={activitiesInfo.title}
-                    description={activitiesInfo.description}
-                    imageProps={{
-                      width: "292px",
-                      height: "202px",
-                      altText: "",
-                      url: activitiesInfo.imageURL,
-                    }}
-                  ></Card>
-                </div>
-              )
-            )}
+            {activitiesInfo.map((activitiesInfo) => (
+              <div>
+                <Card
+                  title={activitiesInfo.title}
+                  description={activitiesInfo.description}
+                  imageProps={{
+                    width: "292px",
+                    height: "202px",
+                    altText: "",
+                    url: activitiesInfo.imageURL,
+                  }}
+                ></Card>
+              </div>
+            ))}
           </div>
         </div>
       )}

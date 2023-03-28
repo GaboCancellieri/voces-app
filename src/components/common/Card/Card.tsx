@@ -52,7 +52,11 @@ const Card = ({
           )}
         </div>
 
-        <div className={styles.textContainer}>
+        <div
+          className={classnames(styles.textContainer, {
+            [styles.isStatic]: isStatic,
+          })}
+        >
           <Typography
             fontFamily="fjallaOne"
             size={"30px"}

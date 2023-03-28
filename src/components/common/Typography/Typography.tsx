@@ -20,7 +20,7 @@ const Typography = ({
         fontSize: size,
         fontFamily: typographyVariant[fontFamily][variant],
         textAlign: align,
-        cursor: "default",
+        cursor: "inherit",
       }}
     >
       {children}

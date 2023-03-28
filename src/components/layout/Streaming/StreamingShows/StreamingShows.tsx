@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./streamingShows.module.scss";
-import { Card, Carousel, Typography, Image } from "ccomponents/index";
+import {
+  Carousel,
+  Typography,
+  Image,
+  CardStreaming,
+  Button,
+} from "ccomponents/index";
 import connect from "src/context/Store/connect";
 import { WindowSizeStateContext } from "src/context/WindowSizeProvider/WindowSizeProvider";
 import { IWindowSizeState } from "src/context/WindowSizeProvider/types";
@@ -8,7 +14,6 @@ import classnames from "classnames";
 import { IShow } from "src/api/types";
 import { useShowsService } from "src/api/api";
 import { COLOR_PRIMARY } from "constants/colors";
-import CardStreaming from "ccomponents/CardStreaming";
 
 interface ShowsProps {
   isDesktop: boolean;
@@ -19,13 +24,19 @@ const StreamingShows = ({ isDesktop, isMobile }: ShowsProps) => {
   const streamingShowsService = useShowsService();
   const [showsInfo, setShowsInfo] = useState<IShow[] | null>(null);
   const imgArray: any = [];
+  const showsArr: any = [];
+
+  showsInfo?.forEach((show) => {
+    if (show) {
+      showsArr.push(show);
+    }
+  });
 
   showsInfo?.forEach((show) => {
     if (show.isFeatured) {
       imgArray.push(show);
     }
   });
-  console.log(imgArray);
 
   const handleGet = async () => {
     const result = await streamingShowsService.get();
@@ -72,8 +83,8 @@ const StreamingShows = ({ isDesktop, isMobile }: ShowsProps) => {
             </Typography>
           </div>
           <div className={styles.cards}>
-            {JSON.parse(JSON.stringify(showsInfo)).map((showsInfo: any) => (
-              <div>
+            {showsArr.map((showsInfo: any, index: number) => (
+              <div key={showsInfo.id}>
                 <CardStreaming
                   title={showsInfo.title}
                   description={showsInfo.description}

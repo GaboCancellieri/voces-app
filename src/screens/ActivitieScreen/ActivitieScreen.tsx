@@ -6,6 +6,7 @@ import {
 import NavBar from "ccomponents/NavBar";
 import styles from "styles/nonAdminScreens.module.scss";
 import { Footer } from "ccomponents/index";
+
 const ActivitieScreen = () => {
   return (
     <div className={styles.nonAdminScreen}>

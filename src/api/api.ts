@@ -11,6 +11,7 @@ import {
   ActivitiesCardsService,
   HomeNewsService,
 } from "./services";
+import RegService from "./services/RegistrationService";
 import UsersService from "./services/UsersService";
 
 export const useActivitiesCardsService = () => {
@@ -43,6 +44,10 @@ export const useShowsService = () => {
 
 export const useLoginService = () => {
   return new LoginService(useContext(AlertDispatchContext));
+};
+
+export const useRegService = () => {
+  return new RegService(useContext(AlertDispatchContext));
 };
 
 export const useUsersService = () => {

@@ -1,0 +1,18 @@
+@import "../../../../styles/variables/colors.module.scss";
+.title {
+  margin: 20px 0px 20px 0px;
+}
+
+.carousel_container {
+  border: 4px solid $colorPrimary;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin: 8px;
+}
+.carousel_title {
+  margin: 10px 0px 10px 0px;
+}
+
+.carousel {
+  margin-bottom: 30px;
+}

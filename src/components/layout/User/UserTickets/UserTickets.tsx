@@ -12,10 +12,10 @@ const UserTickets = ({ currentUser }: UserAccountDetailsProps) => {
   console.log({ currentUser });
   if (!currentUser) return <></>;
   return (
-    <div className={styles.tickets}>
+    <div className={styles.tickets_container}>
       {USER_TICKETS.map((ticket, index) => {
         return (
-          <div key={index}>
+          <div key={index} className={styles.tickets}>
             <CardTicket
               description={`
                 Inicio: ${format(ticket.startDate, "dd/mm/yyyy")}
@@ -23,8 +23,8 @@ const UserTickets = ({ currentUser }: UserAccountDetailsProps) => {
               `}
               title={ticket.showTitle}
               imageProps={{
-                width: "292px",
-                height: "202px",
+                width: "250px",
+                height: "200px",
                 altText: "",
                 url: ticket.imageURL,
               }}

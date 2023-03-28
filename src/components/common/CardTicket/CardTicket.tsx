@@ -5,7 +5,12 @@ import { Typography, Image } from "ccomponents/index";
 import { COLOR_PRIMARY, COLOR_WHITE } from "constants/colors";
 import { CardProps } from "./types";
 
-const CardTicket = ({ title, description, imageProps }: CardProps) => {
+const CardTicket = ({
+  title,
+  description,
+  imageProps,
+  children,
+}: CardProps) => {
   return (
     <div className={styles.cardTicket}>
       <div>
@@ -14,8 +19,8 @@ const CardTicket = ({ title, description, imageProps }: CardProps) => {
             className={styles.img}
             url={imageProps.url}
             altText={imageProps.altText}
-            width="250px"
-            height="200px"
+            width={imageProps.width}
+            height={imageProps.height}
           />
         )}
       </div>
@@ -40,6 +45,7 @@ const CardTicket = ({ title, description, imageProps }: CardProps) => {
           {description}
         </Typography>
       </div>
+      {children}
     </div>
   );
 };

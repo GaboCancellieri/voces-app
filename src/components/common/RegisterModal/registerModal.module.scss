@@ -1,0 +1,44 @@
+.registerModalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.titles {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto 0;
+  padding-right: 0.5rem;
+  width: 100%;
+  height: fit-content;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.error_message {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: red;
+  margin-top: 0.2rem;
+}
