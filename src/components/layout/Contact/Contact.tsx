@@ -1,9 +1,17 @@
 import { Button, Typography } from "ccomponents/index";
 import { COLOR_ALMOST_WHITE, COLOR_PRIMARY } from "constants/colors";
-import React from "react";
+import React, { useState } from "react";
 import { TITLE } from "./constants";
 import styles from "./contact.module.scss";
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [question, setQuestion] = useState("");
+
+  const handleSend = () => {};
+
   return (
     <div>
       <div className={styles.contactBanner}>
@@ -34,10 +42,12 @@ const Contact = () => {
                 </Typography>{" "}
               </label>
               <input
+                value={name}
                 type="text"
                 name="Nombre"
                 placeholder="Ingrese su Nombre"
                 className={styles.formElements}
+                onChange={(e) => setName(e.target.value)}
               ></input>
               <label htmlFor="Apellido">
                 <Typography
@@ -48,10 +58,12 @@ const Contact = () => {
                 </Typography>{" "}
               </label>
               <input
+                value={lastName}
                 type="text"
                 name="Apellido"
                 placeholder="Ingrese su Apellido"
                 className={styles.formElements}
+                onChange={(e) => setLastName(e.target.value)}
               ></input>
             </div>
             <label htmlFor="Telefono">
@@ -60,22 +72,25 @@ const Contact = () => {
               </Typography>{" "}
             </label>
             <input
+              value={phone}
               type="text"
               name="Telefono"
               placeholder="Ingrese su Telefono sin el 0 y sin el 15"
               className={styles.formElements}
+              onChange={(e) => setPhone(e.target.value)}
             ></input>
             <label htmlFor="Asunto">
-              {" "}
               <Typography className={styles.titles} color={COLOR_ALMOST_WHITE}>
                 Asunto:
-              </Typography>{" "}
+              </Typography>
             </label>
             <input
+              value={subject}
               type="text"
               name="Asunto"
               placeholder="¿De que se trata su consulta?"
               className={styles.formElements}
+              onChange={(e) => setSubject(e.target.value)}
             ></input>
             <label htmlFor="Consulta">
               {" "}
@@ -84,14 +99,26 @@ const Contact = () => {
               </Typography>{" "}
             </label>
             <textarea
-              name="Consutla"
+              value={question}
+              name="Consulta"
               placeholder="¿Cual es su consulta?"
               className={styles.formElements}
+              onChange={(e) => setQuestion(e.target.value)}
             ></textarea>
           </form>
         </div>
         <div className={styles.button}>
-          <Button> ENVIAR </Button>
+          <Button
+            onClick={handleSend}
+            type="submit"
+            disabled={
+              !name || !lastName || !phone || !subject || !question
+                ? true
+                : false
+            }
+          >
+            <Typography>Enviar</Typography>
+          </Button>
         </div>
       </div>
     </div>

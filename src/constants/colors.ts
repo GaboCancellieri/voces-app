@@ -12,3 +12,4 @@ export const COLOR_WHITE = "#FFFFFF";
 export const COLOR_ALMOST_WHITE = "#EFEFEF";
 export const COLOR_BLACK = "#000000";
 export const COLOR_TRANSPARENT = "rgba(0,0,0,0)";
+export const COLOR_GREY = "#808080 ";

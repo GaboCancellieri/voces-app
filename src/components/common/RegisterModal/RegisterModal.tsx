@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Input, Logo, Modal, Typography } from "ccomponents/index";
 import styles from "./registerModal.module.scss";
 import { RegisterModalProps } from "./types";
@@ -6,75 +6,21 @@ import connect from "src/context/Store/connect";
 import { UserDispatchContext } from "src/context/UserContext/UserContext";
 import { COLOR_BLACK } from "constants/colors";
 import { useRegService } from "src/api/api";
+import classnames from "classnames";
 
 const RegisterModal = ({ onCancel, isActive = false }: RegisterModalProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confPass, setConfPass] = useState("");
-
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [passMatch, setPassMatch] = useState(false);
+
+  useEffect(() => {
+    setPassMatch(password === confPass);
+  }, [password, confPass]);
 
   const regService = useRegService();
-  const [error, setError] = useState({
-    name: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const validateFormInput = (event: any) => {
-    event.preventDefault();
-    let inputError = {
-      name: "",
-      lastName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    };
-    if (!name && !lastName) {
-      setError({
-        ...inputError,
-        name: "Ingrese su Nonbre",
-        lastName: "Ingrese su Apellido",
-      });
-      return;
-    }
-    if (!email && !password) {
-      setError({
-        ...inputError,
-        email: "Ingrese un Email Válido",
-        password: "Ingrese una Contraseña",
-      });
-      return;
-    }
-
-    if (!email) {
-      setError({
-        ...inputError,
-        email: "Ingrese un Email Válido",
-      });
-      return;
-    }
-
-    if (password !== confPass) {
-      setError({
-        ...inputError,
-        confirmPassword: "Las Contraseñas No Coinciden",
-      });
-      return;
-    }
-
-    if (!password) {
-      setError({
-        ...inputError,
-        password: "Ingrese una Contraseña",
-      });
-      return;
-    }
-
-    setError(inputError);
-  };
 
   const handleLogin = async () => {
     try {
@@ -96,7 +42,7 @@ const RegisterModal = ({ onCancel, isActive = false }: RegisterModalProps) => {
       height={"fit-content"}
       onCancel={onCancel}
     >
-      <form className="register-form" onSubmit={validateFormInput}>
+      <form className="register-form">
         <div className={styles.registerModalContainer}>
           <div className={styles.logoContainer}>
             <Logo height={"100px"} width={"100px"}></Logo>
@@ -149,7 +95,7 @@ const RegisterModal = ({ onCancel, isActive = false }: RegisterModalProps) => {
               placeholder="Ingrese su email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <p className={styles.error_message}>{error.email}</p>
+
             <Typography
               className={styles.titles}
               fontFamily="sourceSans"
@@ -164,7 +110,13 @@ const RegisterModal = ({ onCancel, isActive = false }: RegisterModalProps) => {
               placeholder="Ingrese su contraseña"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <p className={styles.error_message}>{error.password}</p>
+            <p
+              className={classnames(styles.instructions, {
+                [styles.offscreen]: password.length == 0 || password.length > 7,
+              })}
+            >
+              La contraseña debe contener al menos 8 caracteres
+            </p>
 
             <Typography
               className={styles.titles}
@@ -180,10 +132,24 @@ const RegisterModal = ({ onCancel, isActive = false }: RegisterModalProps) => {
               placeholder="Confirme su contraseña"
               onChange={(e) => setConfPass(e.target.value)}
             />
-            <p className={styles.error_message}>{error.confirmPassword}</p>
+            <p
+              className={classnames(styles.instructions, {
+                [styles.offscreen]: passMatch || confPass.length == 0,
+              })}
+            >
+              La contraseña no coincide
+            </p>
           </div>
           <div className={styles.buttonContainer}>
-            <Button type="submit" onClick={handleLogin}>
+            <Button
+              type="submit"
+              onClick={handleLogin}
+              disabled={
+                !name || !lastName || !email || !password || !passMatch
+                  ? true
+                  : false
+              }
+            >
               <Typography>REGISTRARSE</Typography>
             </Button>
           </div>

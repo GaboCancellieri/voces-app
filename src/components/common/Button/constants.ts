@@ -9,6 +9,7 @@ import {
   COLOR_SECONDARY,
   COLOR_SUCCESS,
   COLOR_WARNING,
+  COLOR_GREY,
 } from "constants/colors";
 
 export const buttonVariant = {
@@ -20,6 +21,7 @@ export const buttonVariant = {
   help: COLOR_HELP,
   danger: COLOR_DANGER,
   blank: COLOR_TRANSPARENT,
+  disabled: COLOR_GREY,
 };
 
 export const textColorVariant = {

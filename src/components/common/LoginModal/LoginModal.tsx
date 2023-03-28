@@ -83,7 +83,10 @@ const LoginModal = ({
           />
         </div>
         <div className={styles.buttonContainer}>
-          <Button onClick={handleLogin}>
+          <Button
+            onClick={handleLogin}
+            disabled={!loginState.email || !loginState.password ? true : false}
+          >
             <Typography>Iniciar Sesion</Typography>
           </Button>
         </div>
